@@ -1,0 +1,17 @@
+@charset "UTF-8";
+h1{
+    text-align: center;
+}
+#options {
+    display: flex;
+    justify-content: center;
+}
+
+#login {
+    margin-right: 1%;
+}
+
+#signup {
+    margin-left: 1%;
+}
+

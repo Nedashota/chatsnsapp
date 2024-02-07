@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/chat.css}">
+    <title> th:text="${peer.name}"></title>
+</head>
+<body>
+<span hidden id="my_id" th:text="${me.id}"></span>
+<span hidden id="peer_id" th:text="${peer.id}"></span>
+
+<div id="peer-name">
+    <span th:text="${peer.name}"></span>
+</div>
+<div id="top-space"></div>
+
+<div id="message-list">
+    <div class="message" th:each="message: ${messages}">
+        <th:block th:if="${message.sender.id == me.id}">
+            <p class="content my_side" th:text="${message.message}"></p>
+        </th:block>
+
+        <th:block th:if="${message.sender.id == peer.id}">
+            <img class="peer_icon" th:src="@{/image/{id}(id=${peer.id})}" width="45" height="45" loading="lazy" decoding="async"/>
+            <p class="content peer_side" th:text="${message.message}"></p>
+        </th:block>
+        <span class="sent_datetime" hidden th:text="${message.sentDateTime}"></span>
+    </div>
+</div>
+<div id="bottom-space"></div>
+
+<form id="message-form">
+    <textarea id="message-area"></textarea>
+    <button type="submit" id="submit-button">Send</button>
+</form>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script th:src="@{/js/chat.js}"></script>
+</body>
+</html>

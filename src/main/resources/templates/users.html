@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/users.css}">
+    <title>chat-app</title>
+</head>
+<body>
+<h1>
+こんにちは、<span th:text="${user.name}"></span>!
+    ユーザーを選択してください！
+</h1>
+<ul class="peer-list">
+    <li th:each="peer : ${peers}">
+        <a class="peer" th:href="@{/chat/{id}(id=${peer.id})}">
+            <img class="icon" th:src="@{/image/{id}(id=${peer.id})}" width="45" height="45"  loading="lazy" decoding="async">
+            <div class="name" th:text="${peer.name}"></div>
+        </a>
+    </li></ul>
+</body>
+</html>

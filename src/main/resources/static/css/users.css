@@ -1,0 +1,29 @@
+@charset "UTF-8";
+h1 {
+    text-align: center;
+}
+
+.icon {
+    width: 2.7em;
+    height: 2.7em;
+    border-radius: 50%;
+}
+
+.peer-list {
+    list-style: none;
+    width: fit-content;
+    margin: auto;
+}
+
+.peer {
+    display: flex;
+    align-items: center;
+    color:inherit;
+    text-decoration: none;
+    padding: 5px;
+    border-bottom: 3px solid #333;
+}
+
+.name {
+    margin-left: 5px;
+}

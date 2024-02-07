@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+    <title>Login/ChatApp</title>
+</head>
+<body>
+
+        <h1> chatappにログインしました</h1>
+
+        <form method="post" action="/login" th:object="${loginForm}">
+            <table>
+                <tr>
+                    <td>
+                        <label>Email Address</label>
+                    </td>
+                    <td>
+                        <input type="email" required th:field="*{mailAddress}">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>Password</label>
+                    </td>
+                    <td>
+                        <input type="password" required th:field="*{password}">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td>
+                        <button type="submit">Log in</button>
+                    </td>
+                </tr>
+</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <title>chat-app</title>
+</head>
+<body>
+<header>
+    <h1>chatappへようこそ</h1>
+</header>
+
+<div id="options">
+    <form id="login" method="get" action="/login">
+        <button type="submit">Login</button>
+    </form>
+
+    <form id="signup" method="get" action="/signup">
+        <button type="submit">Signup</button>
+    </form>
+</div>
+</body>
+</html>

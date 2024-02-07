@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/signup.css}">
+    <title>Signup/chat-app</title>
+</head>
+<body>
+<header>
+
+</header>
+<h1>Chat Appにサインアップしました</h1>
+
+<form method="post" action="/signup" enctype="multipart/form-data" th:object="${signupForm}">
+    <table>
+        <tr>
+            <td>
+                <label>Name</label>
+            </td>
+
+            <td>
+                <input type="text" required th:field="*{name}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Email Address</label>
+            </td>
+
+            <td>
+                <input type="email" required th:field="*{mailAddress}">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Password</label>
+            </td>
+
+            <td>
+                <input type="password" required th:field="*{password}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Icon</label>
+            </td>
+
+            <td>
+                <input type="file" required th:field="*{icon}">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+            </td>
+
+            <td>
+                <button type="submit">
+                    Sign up
+                </button>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
